@@ -1,0 +1,58 @@
+
+/* 
+    Created on : 22 jun. 2023, 18:48:11
+    Author     : rocha
+*/
+
+.navHover:hover{
+    color: darksalmon;
+    font-size: 25px;
+}
+
+.fondo{
+    background: linear-gradient(to bottom, #C6C6C6, #C6C6C6, #C6C6C6);
+}
+
+.fondo1{
+    background: linear-gradient(to bottom, #E8F6FB, #E8F6FB, #E8F6FB);
+}
+
+.icono{
+    width: 38px;
+    height: 38px;
+}
+
+footer{
+    width: 100%;
+    justify-content: center;
+}
+
+footer p{
+    color: whitesmoke;
+}
+
+.footerSize{
+    font-size: 20px;
+}
+
+.negritas{
+    font-size: 20px;
+    font-family: Times New Roman;
+}
+
+.size{
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    color: black;
+}
+
+.tamanio{
+    height: 79.8vh;
+}
+
+.tamanioContrasenia{
+    height: 56vh;
+}

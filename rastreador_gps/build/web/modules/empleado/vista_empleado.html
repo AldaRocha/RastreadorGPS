@@ -1,0 +1,375 @@
+
+<div class="container-fluid justify-content-center me-0" style="margin-top: 65px">
+    <div class="row" id="detalleEmpleado">
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <input class="form-control w-100" type="text" id="txtBuscarEmpleado">
+            <label class="ms-1 mt-1" for="txtBuscarEmpleado">
+                Buscar Empleado
+            </label>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <h1 class="text-center">
+                Empleados
+            </h1>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center d-grid justify-content-center">
+            <button class="btn btn-success align-content-center" id="btnMostrarFormularioEmpleado" onclick="modulo.setDetalleVisible(false);">
+                <i class="fa-solid fa-circle-plus px-2"></i>
+                Agregar Empleado
+            </button>
+        </div>
+        <div class="card col-lg-12 pt-4 pb-4 ps-0 pe-0 form-floating justify-content-center d-flex">
+            <div class="table-responsive">
+                <div class="col-11 mx-auto">
+                    <table class="table table-hover table-striped me-3" id="tblEmpleados">
+                        <thead>
+                            <tr>
+                                <th>Empleado</th>
+                                <th>Nombre(s)</th>
+                                <th>Telefono Celular</th>
+                                <th>Es activo</th>
+                                <th>Esta en ruta</th>
+                                <th>Rol</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyEmpleados">
+                            
+                        </tbody>                
+                    </table>
+                </div>
+            </div>            
+        </div>        
+    </div>
+    
+    <div class="row" id="formularioEmpleado">
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <h1 class="text-center">
+                Empleados
+            </h1>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center d-grid justify-content-center">
+            <button class="btn btn-danger align-content-center" id="btnMostrarRegistroEmpleado" onclick="modulo.setDetalleVisible(true);">
+                <i class="fa-solid fa-circle-xmark px-2"></i>
+                Ver Registros
+            </button>
+        </div>
+        <div class="card col-lg-12 pt-4 pb-4 ps-0 pe-0 form-floating justify-content-center d-flex">
+            <p class="text-center" style="font-size: 20px">
+                <i class="fa-sharp fa-solid fa-circle-info"></i>
+                Ingresa los datos del empleado:
+            </p>
+            <div class="row col-lg-12 m-0 justify-content-center">
+                <div class="form-floating col-lg-4 d-grid justify-content-center">
+                    <h5 class="text-center">
+                        Fotografia del empleado:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </h5>
+                    <img class="rounded mx-auto d-block" style="width: 200px; height: 200px" id="imgEmpleado" onload="modulo.habilitarBtnLimpiar();">
+                    <div class="mt-2 justify-content-center">
+                        <input class="form-control" type="file" id="imagenSeleccionada" oninput="modulo.habilitarBtnLimpiar();">
+                    </div>
+                    <textarea class="d-none" id="codigoFotografia" name="codigoFotografia" rows="5" cols="10" oninput="modulo.habilitarBtnLimpiar();"></textarea>
+                </div>
+                <div class="col-lg-8 justify-content-center align-content-center">
+                    <div class="form-floating col-lg-12">
+                        <input class="form-control text-center" type="text" id="txtNumeroEmpleado" readonly="" oninput="modulo.habilitarBtnLimpiar();">
+                        <label for="txtNumeroEmpleado">
+                            Numero de empleado:
+                        </label>
+                    </div>
+                    <div class="form-floating col-lg-12 mt-3">
+                        <input class="form-control" type="text" id="txtNombreEmpleado" required="" oninput="modulo.habilitarBtnLimpiar();">
+                        <label for="txtNombreEmpleado">
+                            Nombre del empleado:
+                            <leg style="color: red">
+                                *
+                            </leg>
+                        </label>
+                    </div>
+                    <div class="form-floating col-lg-12 mt-3">
+                        <input class="form-control" type="text" id="txtPrimerApellido" required="" oninput="modulo.habilitarBtnLimpiar();">
+                        <label for="txtPrimerApellido">
+                            Primer apellido:
+                            <leg style="color: red">
+                                *
+                            </leg>
+                        </label>
+                    </div>
+                    <div class="form-floating col-lg-12 mt-3">
+                        <input class="form-control" type="text" id="txtSegundoApellido" required="" oninput="modulo.habilitarBtnLimpiar();">
+                        <label for="txtSegundoApellido">
+                            Segundo apellido:
+                            <leg style="color: red">
+                                *
+                            </leg>
+                        </label>
+                    </div>
+                </div>                                                
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtCurp" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtCurp">
+                        CURP del empleado:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtRfc" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtRfc">
+                        RFC del empleado:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="number" id="txtNumeroSeguroSocial" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtNumeroSeguroSocial">
+                        Numero seguro social:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="date" id="txtFechaIngreso" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtFechaIngreso">
+                        Fecha de ingreso:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="date" id="txtFechaBaja" readonly="">
+                    <label class="ms-2" for="txtFechaBaja">
+                        Fecha en que termino relacion laboral:                        
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">                    
+                    <select class="form-select" id="cmbTipoLicencia" name="cmbTipoLicencia" required="" onchange="modulo.habilitarBtnLimpiar();">
+                        <option selected="">
+                            Seleccione el tipo de licencia:                            
+                        </option>
+                        <option value="A">
+                            Tipo A
+                        </option>
+                        <option value="B">
+                            Tipo B
+                        </option>
+                        <option value="C">
+                            Tipo C
+                        </option>
+                        <option value="D">
+                            Tipo D
+                        </option>
+                        <option value="PA">
+                            Permiso A
+                        </option>
+                        <option value="PD">
+                            Permiso D
+                        </option>
+                    </select>
+                    <label class="ms-2" for="cmbTipoLicencia">
+                        Licencia de manejo:
+                        <leg style="color: red">
+                            *
+                        </leg>                        
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtNombreCalle" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtNombreCalle">
+                        Calle:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="number" id="txtNumeroCalle" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtNumeroCalle">
+                        Numero:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtNombreColonia" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtNombreColonia">
+                        Colonia:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtCiudad" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtCiudad">
+                        Ciudad:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtEstado" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtEstado">
+                        Estado:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="number" id="txtTelCelular" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtTelCelular">
+                        Telefono celular:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="number" id="txtTelEmergencia" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtTelEmergencia">
+                        Telefono de emergencia:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtEstatus" readonly="">
+                    <label class="ms-2" for="txtEstatus">
+                        Esta activo en la empresa:                        
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4 mt-3">
+                    <input class="form-control" type="text" id="txtEnRuta" readonly="">
+                    <label class="ms-2" for="txtEnRuta">
+                        Esta en ruta:
+                    </label>
+                </div>
+            </div>
+            <p class="text-center mt-3" style="font-size: 20px">
+                <i class="fa-sharp fa-solid fa-circle-info"></i>
+                Crea las credenciales del empleado
+            </p>
+            <div class="row col-lg-12 m-0 justify-content-center">
+                <div class="form-floating col-lg-4">
+                    <input class="d-none" type="number" id="txtIdUsuario">
+                    <input class="form-control" type="text" id="txtNombreUsuario" required="" oninput="modulo.habilitarBtnLimpiar();">
+                    <label class="ms-2" for="txtNombreUsuario">
+                        Nombre de usuario:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4">
+                    <input class="form-control" type="password" id="txtContrasenia" required="" oninput="modulo.habilitarBtnLimpiar();" onfocus="modulo.mostrarToastContrasenia();">
+                    <label class="ms-2">
+                        Contraseña:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="form-floating col-lg-4">
+                    <select class="form-select" id="cmbNivel" name="cmbNivel" required="" onchange="modulo.habilitarBtnLimpiar();">
+                        
+                    </select>
+                    <label class="ms-2" for="cmbNivel">
+                        Nivel:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </label>
+                </div>
+                <div class="row col-lg-12 m-0 justify-content-center" id="divBtns">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">
+            Loading...
+        </span>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast" id="toastTablaEmpleado">
+        <div class="toast-header">
+            <img class="rounded me-2" src="../../resources/icono.png" alt="Icono de la empresa">
+            <strong class="me-auto">
+                Tip
+            </strong>
+            <small>
+                Ahora
+            </small>
+            <button type="button" class="btn-close me-2" data-bs-dismiss="toast">
+                
+            </button>
+        </div>
+        <div class="toast-body">
+            Para ver la informacion del empleado seleccionelo en la tabla
+        </div>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast" id="toastObligatorio">
+        <div class="toast-header">
+            <img class="rounded me-2" src="../../resources/icono.png" alt="Icono de la empresa">
+            <strong class="me-auto">
+                Nota
+            </strong>
+            <small>
+                Ahora
+            </small>
+            <button type="button" class="btn-close me-2" data-bs-dismiss="toast">
+                
+            </button>
+        </div>
+        <div class="toast-body">
+            Es obligatorio llenar los campos que tengan el siguiente icono:
+            <leg style="color: red">
+                *
+            </leg>
+        </div>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast" id="toastContrasenia">
+        <div class="toast-header">
+            <img class="rounded me-2" src="../../resources/icono.png" alt="Icono de la empresa">
+            <strong class="me-auto">
+                Nota
+            </strong>
+            <small>
+                Ahora
+            </small>
+            <button type="button" class="btn-close me-2" data-bs-dismiss="toast">
+
+            </button>
+        </div>
+        <div class="toast-body">
+            Por seguridad la contraseña debe ser minimo 8 caracteres, 
+            evite usar cualquiera de los siguientes: * ; ) ( ' / - % > <
+        </div>
+    </div>
+</div>

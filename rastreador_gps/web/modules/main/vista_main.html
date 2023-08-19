@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rastreador GPS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Alda">
+        <meta name="date" content="22/06/2023">
+        <link rel="stylesheet" type="text/css" href="../../style/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../../style/js/gft/gft.css"/>
+        <link rel="stylesheet" type="text/css" href="../../style/css/mystyles.css"/>
+        <link rel="icon" type="image/x-icon" href="../../resources/icono.png"/>
+        <script src="../../style/js/icons.js" crossorigin="anonymous"></script>
+        <script src="../../style/js/md5.min.js"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-core-legacy.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-service-legacy.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body onload="inicializar();" style="background-color: #C6C6C6;">
+        <div class="container-fluid fondo">
+            <nav class="fondo1 navbar navbar-expand-sm bg-info fixed-top">
+                <div class="container-fluid">
+                    <a href="vista_main.html">
+                        <img width="200px" height="40px" src="../../resources/logo.png" alt="Logo de la empresa" class="mx-3"/>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse negritas" id="collapsibleNavbar">
+                        <ul class="navbar-nav me-auto" id="normales">
+                            
+                        </ul>
+                        <ul class="navbar-nav ms-auto mx-3">
+                            <li class="nav-item dropdown navHover mx-5">
+                                <a class="nav-link dropdown-toggle title navHover" href="" role="button" id="nombreUsuarioSession" data-bs-toggle="dropdown">Usuario</a>
+                                <ul class="dropdown-menu" id="dropdownMenu">
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="container-fluid justify-content-center tamanio" id="contenedorPrincipal">
+                <div class="row justify-content-center align-items-center vh-100">
+                    <div class="col-md-6">
+                        <img class="w-100" src="../../resources/logo.png" alt="Logo de la empresa"/>
+                        <div class="d-flex justify-content-center spinner-container d-none">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">
+                                    Loading...
+                                </span>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+            
+            <footer class="fondo1 p-2 bg-info text-black text-center size mt-3">
+                <div class="footerSize align-items-center">
+                    <p class="mt-0 text-black footerSize mb-0">
+                        Copyright &copy; to Almaximo TI 2023.
+                        <br/>All rights reserved.
+                    </p>
+                </div>
+                <div class="footerSize mx-3 align-items-center">
+                    <a href="https://www.facebook.com/AlMaximoTI"><img class="icono" src="../../resources/facebook.png"></a>                    
+                </div>
+            </footer>
+        </div>
+        <script src="../../style/js/bootstrap.bundle.js"></script>
+        <script src="mainController.js"></script>
+        <script src="../../js/loginController.js"></script>
+        <script src="../../style/js/gft/gft.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>

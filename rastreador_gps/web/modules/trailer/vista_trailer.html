@@ -1,0 +1,182 @@
+
+<div class="container-fluid justify-content-center me-0" style="margin-top: 65px">
+    <div class="row" id="detalleTrailer">
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <input class="form-control w-100" type="text" id="txtBuscarTrailer">
+            <label class="ms-1 mt-1" for="txtBuscarTrailer">
+                Buscar Trailer
+            </label>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <h1 class="text-center">
+                Trailers
+            </h1>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center d-grid justify-content-center">
+            <button class="btn btn-success align-content-center" id="btnMostrarFormularioTrailer" onclick="modulo.setDetalleVisible(false);">
+                <i class="fa-solid fa-circle-plus px-2"></i>
+                Agregar Trailer
+            </button>
+        </div>
+        <div class="card col-lg-12 pt-4 pb-4 ps-0 pe-0 form-floating justify-content-center d-flex">
+            <div class="table-responsive">
+                <div class="col-11 mx-auto">
+                    <table class="table table-hover table-striped me-3" id="tblTrailers">
+                        <thead>
+                            <tr>
+                                <th>Trailer</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Placa</th>
+                                <th>Aun transita</th>
+                                <th>Esta en ruta</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyTrailers">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" id="formularioTrailer">
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center justify-content-center">
+            <h1 class="text-center">
+                Trailers
+            </h1>
+        </div>
+        <div class="mt-3 col-lg-4 p-2 form-floating align-content-center d-grid justify-content-center">
+            <button class="btn btn-danger align-content-center" id="btnMostrarRegistroTrailer" onclick="modulo.setDetalleVisible(true);">
+                <i class="fa-solid fa-circle-xmark px-2"></i>
+                Ver Registros
+            </button>
+        </div>
+        <div class="card col-lg-12 pt-4 pb-4 ps-0 pe-0 form-floating justify-content-center d-flex">
+            <p class="text-center" style="font-size: 20px">
+                <i class="fa-sharp fa-solid fa-circle-info"></i>
+                Ingresa los datos del trailer:
+            </p>
+            <div class="row col-lg-12 m-0 justify-content-center">
+                <div class="form-floating col-lg-4 d-grid justify-content-center">
+                    <h5 class="text-center">
+                        Fotografia del trailer:
+                        <leg style="color: red">
+                            *
+                        </leg>
+                    </h5>
+                    <img class="rounded mx-auto d-block" style="width: 200px; height: 200px" id="imgTrailer" onload="modulo.habilitarBtnLimpiarTrailer();">
+                    <div class="mt-2 justify-content-center">
+                        <input class="form-control" type="file" id="imagenSeleccionadaTrailer" oninput="modulo.habilitarBtnLimpiarTrailer();">
+                    </div>
+                    <textarea class="d-none" id="codigoFotografiaTrailer" name="codigoFotografiaTrailer" rows="5" cols="10" oninput="modulo.habilitarBtnLimpiarTrailer();"></textarea>
+                </div>
+                <div class="col-lg-8 justify-content-center align-content-center">
+                    <div class="form-floating col-lg-12">
+                        <input class="form-control text-center" type="number" id="txtNumeroTrailer" readonly="" oninput="modulo.habilitarBtnLimpiarTrailer();">
+                        <label for="txtNumeroTrailer">
+                            Numero de trailer:
+                        </label>
+                    </div>
+                    <div class="form-floating col-lg-12 mt-3">
+                        <input class="form-control" type="text" id="txtMarca" required="" oninput="modulo.habilitarBtnLimpiarTrailer();">
+                        <label for="txtMarca">
+                            Marca del trailer:
+                            <leg style="color: red">
+                                *
+                            </leg>
+                        </label>
+                    </div>
+                    <div class="form-floating col-lg-12 mt-3">
+                        <input class="form-control" type="text" id="txtModelo" required="" oninput="modulo.habilitarBtnLimpiarTrailer();">
+                        <label for="txtModelo">
+                            Modelo del trailer:
+                            <leg style="color: red">
+                                *
+                            </leg>
+                        </label>
+                    </div>
+                    <div class="form-floating col-lg-12 mt-3">
+                        <input class="form-control" type="text" id="txtPlaca" required="" oninput="modulo.habilitarBtnLimpiarTrailer();">
+                        <label for="txtPlaca">
+                            Placa del trailer:
+                            <leg style="color: red">
+                                *
+                            </leg>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-floating col-lg-6 mt-3">
+                    <input class="form-control" type="text" id="txtEstatusTrailer" readonly="">
+                    <label class="ms-2" for="txtEstatusTrailer">
+                        Aun se puede manejar:
+                    </label>
+                </div>
+                <div class="form-floating col-lg-6 mt-3">
+                    <input class="form-control" type="text" id="txtEnRutaTrailer" readonly="">
+                    <label class="ms-2" for="txtEnRutaTrailer">
+                        Esta en ruta:
+                    </label>
+                </div>
+                <div class="row col-lg-12 m-0 justify-content-center" id="divBtnsTrailer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center spinner-container d-none mt-3 mb-3">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">
+            Loading...
+        </span>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast" id="toastTablaTrailer">
+        <div class="toast-header">
+            <img class="rounded me-2" src="../../resources/icono.png" alt="Icono de la empresa">
+            <strong class="me-auto">
+                Tip
+            </strong>
+            <small>
+                Ahora
+            </small>
+            <button type="button" class="btn-close me-2" data-bs-dismiss="toast">
+                
+            </button>
+        </div>
+        <div class="toast-body">
+            Para ver la informacion del trailer seleccionelo en la tabla
+        </div>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast" id="toastObligatorioTrailer">
+        <div class="toast-header">
+            <img class="rounded me-2" src="../../resources/icono.png" alt="Icono de la empresa">
+            <strong class="me-auto">
+                Nota
+            </strong>
+            <small>
+                Ahora
+            </small>
+            <button type="button" class="btn-close me-2" data-bs-dismiss="toast">
+                
+            </button>
+        </div>
+        <div class="toast-body">
+            Es obligatorio llenar los campos que tengan el siguiente icono:
+            <leg style="color: red">
+                *
+            </leg>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rastreador GPS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Alda">
+        <meta name="date" content="22/06/2023">
+        <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="style/js/gft/gft.css"/>
+        <link rel="stylesheet" type="text/css" href="style/css/login.css"/>
+        <link rel="icon" type="image/x-icon" href="resources/icono.png"/>
+        <script src="style/js/icons.js" crossorigin="anonymous"></script>
+        <script src="style/js/md5.min.js"></script>
+    </head>
+    <body>
+        <div class="login">
+            <img src="resources/logo.png" alt="Logo de la empresa" class="center-image"/>
+            <h1 class="text-center">
+                Iniciar Sesi&oacute;n
+            </h1>
+            <hr>
+            <form>
+                <div class="form-group" id="divUsuario">
+                    <label class="form-label" for="idUsuario">Usuario</label>
+                    <input class="form-control" type="text" id="idUsuario" required>
+                    <div class="invalid-feedback d-none" id="divMensajeUsuario">
+                        Ingresa tu nombre de usuario
+                    </div>
+                </div>
+                <div class="form-group" id="divContrasenia">
+                    <label class="form-label" for="idPassword">Contrase&ntilde;a</label>
+                    <input class="form-control" type="password" id="idPassword" required onchange="ingresar();">
+                    <div class="invalid-feedback d-none" id="divMensajeContrasenia">
+                        Ingresa tu Contrase&ntilde;a
+                    </div>
+                </div>
+                <button type="button" class="btn btn-outline-success w-100" onclick="ingresar();">Iniciar Sesi&oacute;n</button>
+                <div class="d-flex justify-content-center spinner-container d-none mt-3">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">
+                        Loading...
+                    </span>
+                </div>
+        </div>
+            </form>
+        </div>
+        <script src="style/js/bootstrap.bundle.js"></script>
+        <script src="js/loginController.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>
